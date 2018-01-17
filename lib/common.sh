@@ -16,6 +16,7 @@ calculate_lein_build_task() {
 }
 
 cache_copy() {
+  echo "Flag 8"
   rel_dir=$1
   from_dir=$2
   to_dir=$3
@@ -28,6 +29,7 @@ cache_copy() {
 
 # Install node.js
 install_nodejs() {
+  echo "Flag 9"
   local version="${1:?}"
   local dir="${2:?}"
   local os="linux"
@@ -55,6 +57,7 @@ install_nodejs() {
 }
 
 detect_and_install_nodejs() {
+  echo "Flag 10"
   local buildDir=${1}
   if [ ! -d ${buildDir}/.heroku/nodejs ] && [ "true" != "$SKIP_NODEJS_INSTALL" ]; then
     if [ "$(grep lein-npm ${buildDir}/project.clj)" != "" ] || [ -n "$NODEJS_VERSION"  ]; then
@@ -67,6 +70,7 @@ detect_and_install_nodejs() {
 }
 
 install_jdk() {
+  echo "Flag 11"
   local install_dir=${1}
 
   let start=$(nowms)

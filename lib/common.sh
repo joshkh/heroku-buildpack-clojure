@@ -87,7 +87,9 @@ install_jdk() {
   mtime "jvm-common.install.time" "${start}"
 
   let start=$(nowms)
+  echo "Flag installing java with overlay"
   install_java_with_overlay ${install_dir}
+  echo "Java with overlay installed"
   mtime "jvm.install.time" "${start}"
   echo "Install JDK complete"
 }

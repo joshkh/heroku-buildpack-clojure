@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "Flag 7"
 
 # This gets replaced by bin/compile for DRY purposes.
 export LEIN_VERSION="##LEIN_VERSION##"

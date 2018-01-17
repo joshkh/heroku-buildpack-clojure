@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
+echo "Flag 3"
+
 if [ ! -f $BUILD_DIR/Procfile ]; then
   cat <<EOF
 ---

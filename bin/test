@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # bin/test <build-dir> <env-dir> <artifact-dir>
 
+echo "Flag 4"
+
 cd "$1" && lein test

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "Flag 6"
 
 export BUILDPACK_STDLIB_URL="https://lang-common.s3.amazonaws.com/buildpack-stdlib/v7/stdlib.sh"
 

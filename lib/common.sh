@@ -88,4 +88,5 @@ install_jdk() {
   let start=$(nowms)
   install_java_with_overlay ${install_dir}
   mtime "jvm.install.time" "${start}"
+  echo "Flag 14"
 }

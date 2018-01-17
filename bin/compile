@@ -19,13 +19,22 @@ LIB_DIR=$BP_DIR/lib
 source $LIB_DIR/common.sh
 source <(curl --retry 3 -fsSL $BUILDPACK_STDLIB_URL)
 
+echo "Flag A"
+
 export_env $ENV_DIR "." "JAVA_OPTS"
+
+echo "Flag installing JDK"
+
 
 # Install JDK from jvm-common
 install_jdk ${BUILD_DIR}
 
+echo "Flag jdk installed, next nodejs"
+
 # Install Node.js if needed
 detect_and_install_nodejs ${BUILD_DIR}
+
+echo "Flag node installed"
 
 # Check for vendored lein script
 if [ -x $BUILD_DIR/bin/lein ]; then

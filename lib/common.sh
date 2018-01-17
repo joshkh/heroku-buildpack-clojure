@@ -75,11 +75,14 @@ install_jdk() {
 
   let start=$(nowms)
   JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/jvm-common.tgz}
+  echo "Flag 12"
   mkdir -p /tmp/jvm-common
   curl --retry 3 --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common --strip-components=1
+  echo "Flag 14"
   source /tmp/jvm-common/bin/util
   source /tmp/jvm-common/bin/java
   source /tmp/jvm-common/opt/jdbc.sh
+  echo "Flag 13"
   mtime "jvm-common.install.time" "${start}"
 
   let start=$(nowms)
